@@ -13,12 +13,10 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            ArtistsView()
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Text("Artists")
                     }
                 }
                 .tag(0)
@@ -26,8 +24,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Text("Albums")
                     }
                 }
                 .tag(1)
@@ -38,5 +35,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        .environment(\.colorScheme, .dark)
     }
 }
